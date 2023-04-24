@@ -1,0 +1,46 @@
+.main {
+  width: 100%;
+  min-height: 100vh;
+  clear: both;
+  float: left;
+  padding-left: 370px;
+}
+
+.main__inner {
+  width: 100%;
+  min-height: 100vh;
+  clear: both;
+  float: left;
+  position: relative;
+}
+
+.section {
+  width: 100%;
+  float: left;
+}
+
+.projects {
+  width: 100%;
+  float: left;
+  padding-top: 110px;
+}
+
+.contact {
+  width: 100%;
+  min-height: 100vh;
+  float: left;
+  background-color: #e9f9ff;
+  padding-top: 120px;
+}
+
+@media (max-width: 1600px) {
+  .main {
+    padding-left: 300px;
+  }
+}
+
+@media (max-width: 1040px) {
+  .main {
+    padding: 0;
+  }
+}

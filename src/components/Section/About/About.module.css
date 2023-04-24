@@ -1,0 +1,147 @@
+.about {
+  width: 100%;
+  padding-top: 130px;
+}
+
+.content {
+  width: 100%;
+  max-width: 1250px;
+  height: auto;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.details {
+  width: 100%;
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.details__left {
+  width: 40%;
+}
+
+.details__title {
+  width: 100%;
+  float: left;
+  margin-bottom: 40px;
+}
+
+.details__mini {
+  display: block;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.details__name {
+  font-weight: 800;
+  font-size: 40px;
+  margin: 0 0 10px 0;
+  color: #130f49;
+}
+
+.details__job {
+  font-weight: 600;
+  font-size: 20px;
+  color: #130f49;
+}
+
+.details__buttons {
+  width: 100%;
+  float: left;
+  display: flex;
+  align-items: center;
+}
+
+.details__right {
+  width: 60%;
+}
+
+.details__text {
+  width: 100%;
+  float: left;
+  margin-bottom: 44px;
+}
+
+.details__text p {
+  margin-bottom: 30px;
+}
+
+.details__info {
+  width: 100%;
+  float: left;
+}
+
+.details__info ul {
+  margin: 0;
+  padding: 0;
+}
+
+.details__info ul li {
+  margin: 0 40px 20px 0;
+  display: inline-block;
+}
+
+.details__info ul li span:first-child {
+  text-transform: uppercase;
+  text-decoration: underline;
+  display: block;
+}
+
+.details__info ul li span:last-child {
+  font-family: sans-serif;
+  font-weight: 700;
+  color: #130f49;
+  display: block;
+}
+
+.details__info ul li a {
+  color: #130f49;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 1600px) {
+  .about {
+    padding-top: 85px;
+  }
+  .content {
+    max-width: 1000px;
+  }
+  .details {
+    flex-direction: column;
+  }
+  .details__title {
+    margin-bottom: 30px;
+  }
+  .details__mini {
+    margin-bottom: 5px;
+  }
+  .details__name {
+    font-size: 35px;
+  }
+  .details__job {
+    font-size: 17px;
+  }
+  .details__text p {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 1040px) {
+  .details__left {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  .details__right {
+    width: 100%;
+  }
+  .details__text p {
+    margin-bottom: 17px;
+  }
+}

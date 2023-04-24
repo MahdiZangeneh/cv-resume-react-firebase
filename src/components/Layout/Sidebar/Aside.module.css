@@ -1,0 +1,41 @@
+.sidebar {
+  width: 370px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  border-right: 1px solid rgba(85, 82, 124, 0.1);
+}
+
+.sidebar__inner {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  text-align: center;
+}
+
+.desktop-author {
+  width: 100%;
+  float: left;
+  padding-top: 60px;
+}
+
+.desktop-nav {
+  width: 100%;
+  float: left;
+  height: 450px;
+}
+
+.desktop-copyright {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+}
+
+@media (max-width: 1600px) {
+  .sidebar {
+    width: 300px;
+  }
+}
