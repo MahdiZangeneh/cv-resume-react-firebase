@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import classes from "./Nav.module.css";
 
 const Nav = (props) => {
-  const [activeItem, setActiveItem] = useState(props.navItems[0].id);
+  const [activeItem, setActiveItem] = useState(props.navItems.fId);
 
   useEffect(() => {
     const handleScrollAndClick = (id) => {

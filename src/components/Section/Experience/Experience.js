@@ -1,136 +1,43 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "../../Card/Card";
 import Modal from "../../Modal/Modal";
 import Button from "../../UI/Button";
 
 import classes from "./Experience.module.css";
 
-const experiences = [
-  {
-    id: "1",
-    title: "Back-End Developer",
-    imageUrl:
-      "https://www.whipmobility.com/wp-content/uploads/2022/08/WHIP-website-2-1024x724.jpg",
-    duration: {
-      startDate: "2021",
-      endDate: "Present",
-    },
-    company: "Whip Mobility sdn",
-    location: "Selangor, Malaysia",
-    description:
-      "WHIP  is a SaaS platform focused on delivering digital success for our automotive retail clients.",
-    descriptions: [
-      "WHIP  is a SaaS platform focused on delivering digital success for our automotive retail clients which empowers auto retailers to interact, sell and service their customers via a comprehensive digital engagement platform (inclusive of private-label app and web) that significantly improves the end-user experience and lowers costs (Shopify for automotive retailers!).",
-    ],
-    skills: [
-      "NodeJs",
-      "NestJs",
-      "MongoDB",
-      "Mongoose",
-      "Typegoose",
-      "JavaScript",
-      "TypeScript",
-      "Amazon Web Services",
-      "Firestore",
-      "Firebase",
-      "REST API",
-      "JSON",
-      "Agile Methodologies",
-      "Axios",
-      "Git",
-      "Postman",
-    ],
-  },
-  {
-    id: "2",
-    title: "Front End Developer",
-    imageUrl: "https://shahrenovin.com/z_themes/979/img/slider_1.png",
-    duration: {
-      startDate: "2018",
-      endDate: "2021",
-    },
-    company: "ShahreNovin",
-    location: "Tehran, Iran",
-    description:
-      "ShahreNovin Software Company, Provides all-in-one business management software.",
-    descriptions: [
-      "The activity of ShahreNovin is providing Software As A Service (SAAS) and other cloud services in Iran and some other countries. We design and develop web-based software and services (cloud services) for the use of small and medium-sized (SME) businesses in Iran and any other Farsi language countries such as Uzbekistan, Tajikistan, Afghanistan, and other immigrant communities",
-      "Through years of experience in the field of providing various software services to thousands of users from all over the country, we have succeeded in designing and developing the most comprehensive business management infrastructure on the scale of small and medium businesses.",
-    ],
-    skills: [
-      "ReactJs",
-      "Jacascript",
-      "TypeScript",
-      "jQuery",
-      "Typescript",
-      "JSON",
-      "REST API",
-      "Html",
-      "Css",
-      "Redux",
-      "Hooks",
-      "SCSS",
-      "Styled-Component",
-      "Bootstrap",
-      "PWA",
-    ],
-  },
-  {
-    id: "3",
-    title: "Front End Developer",
-    imageUrl: "https://marketifythemes.net/html/elisc/img/experience/1.jpg",
-    duration: {
-      startDate: "2015",
-      endDate: "2018",
-    },
-    company: "Samanama",
-    location: "Tehran, Iran",
-    description:
-      "Samanama was a company that designed, and developed software services and information solutions.",
-    descriptions: [
-      "Samanama was a company that designed, and developed software services and information solutions. Among a plethora of services, web design and development, e-commerce solutions, business-to-business applications, business-to-client applications, news portals, and professional video services are a few that was offered.",
-    ],
-    skills: [
-      "HTML",
-      "CSS",
-      "jQuery",
-      "Bootstrap",
-      "Foundation",
-      "JavaScript",
-      "React",
-    ],
-  },
-  {
-    id: "4",
-    title: "Front-end Developer",
-    imageUrl: "https://marketifythemes.net/html/elisc/img/experience/1.jpg",
-    duration: {
-      startDate: "2014",
-      endDate: "2015",
-    },
-    company: "Freelancer",
-    location: "Tehran, Iran",
-    description:
-      "During this period, I was learning and working as a freelancer which helped me a lot to become more and more familiar with programming world.",
-    descriptions: [
-      "I was constantly pushing myself to take on new challenges and projects, and every day felt like an opportunity to expand my skill set and knowledge base. Despite the occasional frustrations and setbacks, I found the experience incredibly fulfilling and rewarding, and I looked forward to diving into my work each day with enthusiasm and curiosity. Overall, it was a truly enjoyable period of growth and discovery that helped lay the foundation for my future success in the programming world.",
-    ],
-    skills: [
-      "Html",
-      "Css",
-      "Javascript",
-      "jQuery",
-      "Php",
-      "Sql",
-      "mySQL",
-      "Apache",
-    ],
-  },
-];
-
 const Experience = (props) => {
   const [modalIsShown, setModalIsShown] = useState(false);
   const [selectedExperience, setSelectedExperience] = useState(null);
+  const [experiences, setExperiences] = useState([]);
+
+  useEffect(() => {
+    const fetchNavigations = async () => {
+      const response = await fetch(
+        "https://cv-resume-react-default-rtdb.asia-southeast1.firebasedatabase.app/experiences.json"
+      );
+      const responseData = await response.json();
+      const loadedExperiences = [];
+
+      for (const key in responseData) {
+        loadedExperiences.push({
+          fId: key,
+          id: responseData[key].id,
+          company: responseData[key].company,
+          description: responseData[key].description,
+          descriptions: responseData[key].descriptions,
+          duration: responseData[key].duration,
+          imageUrl: responseData[key].imageUrl,
+          location: responseData[key].company,
+          skills: responseData[key].skills,
+          title: responseData[key].title,
+        });
+      }
+
+      setExperiences(loadedExperiences);
+    };
+
+    fetchNavigations();
+  });
 
   const showModalHandler = () => {
     setModalIsShown(true);
