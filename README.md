@@ -1,6 +1,6 @@
 ## Resume Template
 
-This is a resume template built using React.js.
+This is a resume template built using React.js and Firebase.
 
 ### Getting Started
 
@@ -22,7 +22,7 @@ This resume template includes the following features:
 
 ### Credits
 
-This resume template was built using React.js.
+This resume template was built using React.js and Firebase.
 
 ### License
 
